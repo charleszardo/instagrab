@@ -12,7 +12,12 @@
     "activeTab",
     "contextMenus"
   ],
-  "background": {
-    "scripts": ["main.js"]
-  }
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.instagram.com/*"
+      ],
+      "js": ["main.js"]
+    }
+  ]
 }
