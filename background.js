@@ -23,7 +23,7 @@
 
 // background (event) page
 var parent = chrome.contextMenus.create({
-  "title": "Remove Element",
+  "title": "Save Image",
   "id": "0",
   "contexts": ["all"]
 });
@@ -31,3 +31,14 @@ var parent = chrome.contextMenus.create({
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
   chrome.tabs.sendMessage(tab.id, {});
 })
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    if( request.message === "get_img_src" ) {
+      chrome.downloads.download({url: request.src},
+                                             function(id) {
+      });
+      console.log(request);
+    }
+  }
+);
