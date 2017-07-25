@@ -4,15 +4,19 @@
   "name": "Instagrab",
   "description": "This extension shows allows users to save images from Instagram in the browser",
   "version": "1.0",
-
   "browser_action": {
-    "default_icon": "icon.png"
+    "default_icon": "images/logo-48.png"
   },
   "permissions": [
     "activeTab",
     "contextMenus",
     "downloads"
   ],
+  "icons": {
+    "16": "images/logo-16.png",
+    "48": "images/logo-48.png",
+    "128": "images/logo-128.png"
+  },
   "content_scripts": [
     {
       "matches": [
