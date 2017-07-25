@@ -17,7 +17,10 @@
       "matches": [
         "https://www.instagram.com/*"
       ],
-      "js": ["main.js"]
+      "js": ["jquery-3.2.1.min.js", "content.js"]
     }
-  ]
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
 }
