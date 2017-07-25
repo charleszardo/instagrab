@@ -5,7 +5,10 @@ document.addEventListener("mousedown", function(event){
 }, true);
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    let imageSrc = $(clickedElement).parent().find("img").attr("src");
+    let img = $(clickedElement).siblings().children()[0],
+        imageSrc = $(img).attr("src");
 
-    chrome.runtime.sendMessage({"message": "get_img_src", "src": imageSrc});
+    if (imageSrc) {
+      chrome.runtime.sendMessage({"message": "get_img_src", "src": imageSrc});
+    }
 });
