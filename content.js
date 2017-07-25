@@ -5,11 +5,9 @@ document.addEventListener("mousedown", function(event){
 }, true);
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-    // clickedElement.remove();
-    $clickedEl = $(clickedElement);
-    $sibling = $($clickedEl.siblings()[0]);
-    // $img = $sibling.children();
-    console.log($sibling);
+    let imageSrc = $(clickedElement).parent().find("img").attr("src");
+
+    
   // chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
   //   console.log(response);
   // });
