@@ -1,6 +1,6 @@
 var parent = chrome.contextMenus.create({
   "title": "Instagrab",
-  "contexts": ["page"],
+  "contexts": ["all"],
   "documentUrlPatterns": ["*://*.instagram.com/*"]
 });
 
