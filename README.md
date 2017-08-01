@@ -4,7 +4,7 @@ Chrome extension which allows Instagram images to be saved from the browser.
 
 ### Project Roadmap
 - [x] Create/add logo
-- [ ] Add functionality to user page
+- [x] Add functionality to user page
 - [ ] Limit contextMenu to images
 - [ ] Further test specificity, selection, etc.
 - [ ] Enable "Save Image As..." option
