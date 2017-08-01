@@ -45,7 +45,7 @@ function getUserPageImgSrc(el) {
       greatGrandchildNode = grandchildNode.firstChild;
 
   if (isImg(greatGrandchildNode)) {
-    return greatGrandchildNode.getAttribute("src");
+    return greatGrandchildNode;
   }
 
   return null;
@@ -60,15 +60,14 @@ document.addEventListener("mousedown", function(event){
   if (document.location.pathname.split("/").length % 2 === 0) {
     clickedImg = getMainImg(clickedEl);
   } else {
-    var x = getUserPageImgSrc(clickedEl);
-    console.log(x);
+    clickedImg = getUserPageImgSrc(clickedEl);
   }
 }, true);
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (clickedImg) {
       let imageSrc = clickedImg.getAttribute("src");
-      
+
       chrome.runtime.sendMessage({"message": "get_img_src", "src": imageSrc});
     }
 });
