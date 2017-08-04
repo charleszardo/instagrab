@@ -32,7 +32,9 @@ function getUserPageImg(el) {
       grandchildNode = childNode.firstChild,
       greatGrandchildNode = grandchildNode.firstChild;
 
-  if (isImg(greatGrandchildNode)) {
+  if (childNode === el) {
+    return null;
+  } else if (isImg(greatGrandchildNode)) {
     return greatGrandchildNode;
   }
 
