@@ -94,3 +94,25 @@ injectScript("("+(function() {
         return proxied.apply(this, [].slice.call(arguments));
     };
 }).toString()+")()");
+
+// begin developing mouseover approach
+
+// get all images
+let imgList = [...document.querySelectorAll("img")];
+
+// filter out profile images
+imgList.filter(img => img.width > 30);
+
+// get class name from first image since all have same class/markup
+// get DOM node to start traversing
+let imgNode = document.querySelector(`.${imgList[0].className}`);
+
+// masking element is a sibling of the node
+let siblingNode = imgNode.parentElement.nextElementSibling;
+
+// once class name of sibling node is determined it should be saved somewhere
+// so that above work doesn't have to be repeated, slowing down the page
+
+// attach mouseover to all elements with siblingNode class
+
+// attach mouseover event every time and AJAX event occurs (unless better approach is developed)
